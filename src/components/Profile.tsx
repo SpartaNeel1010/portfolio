@@ -22,7 +22,7 @@ const socials = [
     },
     {
         name: "Resume",
-        link: "./resume.pdf",
+        link: "./Resume.pdf",
         icon: <FaDochub className="size-4" />
     }
     // TODO: Add more socials here
@@ -57,7 +57,7 @@ export const Profile = () => {
                         {/* or link to schedule a meeting using Calendly or Cal*/}
                         <Link
                             target="_blank"
-                            href="/resume.pdf"
+                            href="/Resume.pdf"
                             className="font-semibold"
                         >
                             CONTACT ME
