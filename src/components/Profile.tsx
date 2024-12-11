@@ -40,7 +40,7 @@ export const Profile = () => {
                             quality={100}
                             src="/avatar.jpg"
                             alt="Profile Picture"
-                            className="rounded-full size-12 md:w-full h-auto lg:h-72 object-cover border-2"
+                            className="rounded-full size-12 md:w-full h-auto lg:h-65 object-cover border-2"
                         />
                         <div className="flex flex-col items-start justify-center">
                             <h1 className="font-bold md:mt-4 text-xl md:text-2xl">Neel Shah</h1>
