@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 import { FaDochub } from "react-icons/fa6";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaEnvelope, FaGithub, FaLinkedin, FaPhone } from "react-icons/fa";
 
 import {
     Card,
@@ -24,8 +24,17 @@ const socials = [
         name: "Resume",
         link: "./Resume.pdf",
         icon: <FaDochub className="size-4" />
-    }
-    // TODO: Add more socials here
+    },
+    {
+        name: "Email",
+        link: "mailto:shahneel1309@gmail.com",
+        icon: <FaEnvelope className="size-4" />
+    },
+    {
+        name: "Phone",
+        link: "tel:+16695774136",
+        icon: <FaPhone className="size-4" />
+    },
 ]
 
 export const Profile = () => {
@@ -45,28 +54,31 @@ export const Profile = () => {
                         <div className="flex flex-col items-start justify-center">
                             <h1 className="font-bold md:mt-4 text-xl md:text-2xl">Neel Shah</h1>
                             <p className="text-sm md:text-base text-muted-foreground">
-                                Software Developer
+                                Software Engineer
                             </p>
                         </div>
                     </div>
                     <p className="mt-2 text-start text-sm text-muted-foreground">
-                        I am a software developer with a passion for building products that solve real-world problems.
+                        New York, NY · Building practical software and intelligent systems.
                     </p>
                     <Button className="mt-4 w-full" asChild>
                         {/* TODO: Add resume link */}
                         {/* or link to schedule a meeting using Calendly or Cal*/}
                         <Link
                             target="_blank"
-                            href="/Resume.pdf"
+                            href="mailto:shahneel1309@gmail.com"
                             className="font-semibold"
                         >
-                            CONTACT ME
+                            EMAIL ME
                         </Link>
                     </Button>
                     <div className="mt-4 flex flex-col space-y-2 border-t border-border pt-4 w-full">
                         {socials.map((s, i) => {
-                            const parts = s.link.split('/')
-                            const username = parts[parts.length - 1]
+                            const label = s.name === "Email"
+                                ? "shahneel1309@gmail.com"
+                                : s.name === "Phone"
+                                    ? "+1 (669) 577-4136"
+                                    : `/${s.link.split('/').filter(Boolean).pop()}`
                             return (
                                 <Link
                                     key={i}
@@ -77,7 +89,7 @@ export const Profile = () => {
                                 >
                                     {s.icon}
                                     <p className="text-sm text-muted-foreground group-hover:text-primary transition-color duration-200 ease-linear">
-                                        /{username}
+                                        {label}
                                     </p>
                                 </Link>
                             )
