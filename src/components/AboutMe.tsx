@@ -13,8 +13,8 @@ export const AboutMe = ( ) => {
             </CardHeader>
             <CardContent>
                 <p className="text-muted-foreground">
-                    {/* Write 1-2 sentences about yourself */}
-                    I am a software engineer with a passion for building scalable and efficient web applications.
+                    Software engineer focused on building reliable, scalable systems across agentic AI,
+                    cloud infrastructure, and full-stack applications.
                 </p>
             </CardContent>
         </Card>

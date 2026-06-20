@@ -8,31 +8,37 @@ import { JobImages } from "@/components/JobImages";
 
 const jobs = [
     {
-        role: " Software Engineering Intern- DevOps", // TODO: Replace with actual role
-        company: "Crest Data", // TODO: Replace with actual company name
-        logo: "/company.png", // TODO: Replace with actual logo
-        duration: "June 2023 - August 2023",
-        description:` • Deployed and managed scalable cloud-based applications using AWS, Docker, Terraform, and Kubernetes, achieving 99.9% uptime and improving scalability.
-        • Automated the provisioning of 50+ cloud resources using Terraform, decreasing deployment time and cuttingconfiguration errors by 30%, as validated by Jenkins logs over a 3-month period.
-        • Created Docker images for 5 key applications and deployed them on Amazon ECS which can support 1,000+ daily active users with seamless scalability.
-        • Implemented CI/CD pipelines using Jenkins, reducing build and deployment time from 2 hours to 1.2 hours. Increased deployment reliability as shown by a drop in failed deployments in Jenkins error logs.`,
-        link: "https://techinnovators.com",
+        role: "Software Engineer",
+        company: "Bloomberg",
+        logo: "/company.svg",
+        duration: "June 2026 - Present",
+        description: "",
+        link: "https://www.bloomberg.com",
         images: [],
     },
     {
-        role: "Software Engineering Intern- Front-end", // TODO: Replace with actual role
-        company: "Grinders", // TODO: Replace with actual company name
-        logo: "/company.svg", // TODO: Replace with actual logo
-        duration: "May 2022 - August 2022",
-        description:
-            `• Collaborated with a team to design and develop user-friendly and responsive front-end interfaces for 6+ deep learning web applications using ReactJS.
- • Built 15+ UI components for displaying analysis diagrams, graphs, and charts for deep learning models to support real-time data visualization.
- • Created 10+ interactive user input forms and real-time output display components for deep learning models, improving data visualization.
- • Developed landing pages, contributor cards, and tech stack cards to enhance overall user engagement and platform accessibility, contributing to smoother user experience.`,
-        link: "https://websolutions.com",
-        images: [
-           
-        ],
+        role: "Software Engineering Intern",
+        company: "Juniper Networks",
+        logo: "/company.png",
+        duration: "May 2025 - August 2025",
+        description: `• Developed a full-stack agentic AI platform automating analysis of Customer Use Cases (CUCs), reducing manual research time and enabling faster, data-driven decision-making.
+• Designed and implemented a stateful multi-agent LangGraph workflow with specialized agents for intent-based query routing and resolution.
+• Created a pipeline to ingest 3,000+ CUCs and 50 network profiles, building a knowledge base with two-stage semantic retrieval and database-backed configuration storage.
+• Engineered specialized tools and utilities that enable agents to execute tasks efficiently within the multi-agent workflow.`,
+        link: "https://www.juniper.net",
+        images: [],
+    },
+    {
+        role: "Software Engineering Intern",
+        company: "Crest Data",
+        logo: "/company.svg",
+        duration: "June 2023 - August 2023",
+        description: `• Deployed and managed e-commerce microservices using Terraform, Docker, and Jenkins, helping ensure 99.9% uptime.
+• Provisioned cloud resources automatically with Terraform, reducing setup time from hours to minutes.
+• Containerized microservices with Docker to keep development, staging, and production environments consistent.
+• Built a Jenkins CI/CD pipeline to streamline build, test, and deployment for faster, more reliable releases.`,
+        link: "https://www.crestdata.ai",
+        images: [],
     },
 ]
 
@@ -67,12 +73,12 @@ export const Experience = () => {
                                     <CalendarDays className="size-3 mr-2"/>
                                     {j.duration}
                                 </p>
-                                <p className="text-sm mt-2">{j.description.split('\n').map((line, index) => (
+                                {j.description && <p className="text-sm mt-2">{j.description.split('\n').map((line, index) => (
                                         <React.Fragment key={index}>
                                         {line}
                                         <br />
                                         </React.Fragment>
-                                    ))}</p>
+                                ))}</p>}
                                 {/* Job Images */}
                                 <JobImages 
                                     role={j.role} 

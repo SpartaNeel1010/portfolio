@@ -6,7 +6,14 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 
-const skills = ["TypeScript", "JavaScript", "Python", "Java", "C#", "C++", "C", "SQL", "HTML", "CSS", "TailwindCSS", "NextJS", "ReactJS", "NodeJS", "ExpressJS", "MongoDB", "PostgreSQL", "Git", "Docker", "Kubernetes","Terraform","Jenkins","AWS","GCP" ,"Linux", "Windows","Tensorflow", "Langchain", "Numpy", "PyTorch", "Keras", "PySpark","Computer Vision", "Natural Language Processing", "Large Language Models"," Data Analysis","Deep Neural Networks", "Retrieval Augmented Generation"]
+const skills = [
+    "Python", "JavaScript", "TypeScript", "Java", "Golang", "C/C++",
+    "React", "Next.js", "Express.js", "Node.js", "Flask", "Django", "CSS", "HTML",
+    "AWS", "GCP", "Terraform", "Docker", "Jenkins", "Kubernetes", "CI/CD", "Ansible",
+    "LangChain", "LangGraph", "AutoGen", "LangSmith", "LlamaIndex", "Vector Databases",
+    "PyTorch", "TensorFlow", "NumPy", "Pandas", "Matplotlib", "Seaborn",
+    "MongoDB", "Redis", "DynamoDB", "PostgreSQL", "AWS RDS", "SQL", "MySQL"
+]
 
 export const Skills = () => {
     return (

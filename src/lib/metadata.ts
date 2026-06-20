@@ -4,7 +4,7 @@ import { Metadata } from 'next'
 
 export function constructMetadata({
   title = 'Neel Shah', // TODO: Add a custom title
-  description = "I am a software engineer with a passion for building scalable and efficient web applications.", // TODO: Add a custom description
+  description = "Neel Shah is a software engineer building scalable systems across agentic AI, cloud infrastructure, and full-stack applications.",
   image = '/thumbnail.png', // TODO: Add a custom image
   icons = '/avatar.svg', // TODO: Add a custom icon
   noIndex = false
@@ -28,10 +28,10 @@ export function constructMetadata({
       title,
       description,
       images: [image],
-      creator: '@chrislonzo'
+      creator: '@SpartaNeel1010'
     },
     icons,
-    metadataBase: new URL('https://www.chrislonzo.com'),
+    metadataBase: new URL('https://github.com/SpartaNeel1010'),
     ...(noIndex && {
       robots: {
         index: false,

@@ -1,37 +1,29 @@
-import Link from "next/link";
 import { cn } from "@/lib/utils";
-
-import { ExternalLink } from "lucide-react";
 
 import { Card, CardContent } from "@/components/ui/card";
 
 export const projects = [
     {
-        title: "Cloud-IDE",
-        description: "The Cloud IDE is an online integrated development environment designed to provide users with a full-featured coding workspace. This IDE allows users to create custom coding environments, share their work with collaborators, and persist code and configuration across sessions.",
-        tech: "React",
-        link: "https://github.com/SpartaNeel1010/CLOUD-IDE",
+        title: "Nit — Custom Version Control System",
+        description: "Built a Git-like version control system in C/C++ with init, add, commit, log, and status. It uses SHA-1 content hashing and a custom object store for deduplicated blobs, commit snapshots, and reliable history traversal.",
+        tech: ["C/C++", "File I/O", "SHA-1 Hashing"],
     },
     {
-        title: "DocGPT- A Medical Chatbot",
-        description: "DocGPT is a full-stack, industry-standard chatbot using a multi-agent RAG architecture with LangGraph and ColPali, enabling dynamic multi-index retrieval for text and image-based medical queries, optimized for accuracy and speed, with an intuitive ReactJS-based UI for seamless interaction and document management. ",
-        tech: "Python",
-        link: "https://github.com/SpartaNeel1010/DocGPT--A-Medical-Chatbot",
+        title: "Distributed Video Encoding System",
+        description: "Implemented a fault-tolerant master-worker video encoding pipeline with gRPC scheduling, Raft-inspired leader election and heartbeats, and FFmpeg keyframe-aware segmentation for parallel processing.",
+        tech: ["Python", "gRPC", "Raft", "FFmpeg", "Docker", "Kubernetes"],
     },
     {
-        title: "Build my own Redis",
-        description: "A Redis clone from scratch in Go, replicating core data structures and functionality for in-memory data storage and retrieval.",
-        tech: "Go",
-        link: "#",
+        title: "Collaborative Cloud IDE",
+        description: "Designed a real-time collaborative coding platform for up to 100 concurrent users, with isolated Kubernetes pods per project, ingress-based routing, and WebSocket-powered editing and code execution.",
+        tech: ["MERN", "Docker", "Kubernetes", "WebSocket"],
     },
-    
 ]
 
 const techColors = {
-    "React": "bg-blue-500",
-    "Vue.js": "bg-purple-500",
     "Python": "bg-yellow-500",
-    "Go": "bg-green-500"
+    "C/C++": "bg-blue-500",
+    "MERN": "bg-green-500",
 }
 
 export const Projects = () => {
@@ -45,34 +37,22 @@ export const Projects = () => {
                     <Card key={i}>
                         <CardContent className="pt-6 h-full">
                             <div className="flex flex-col h-full">
-                                <Link
-                                    href={p.link}
-                                    className="font-semibold text-primary hover:underline"
-                                >
-                                    {p.title}
-                                </Link>
+                                <h3 className="font-semibold">{p.title}</h3>
                                 <p className="text-sm text-muted-foreground mt-1 mb-4">
                                     {p.description}
                                 </p>
                                 <div className="mt-auto flex items-center justify-between">
-                                    <div className="flex items-center space-x-2">
+                                    <div className="flex flex-wrap items-center gap-2">
                                         <div
                                             className={cn(
                                                 "size-4 rounded-full",
-                                                techColors[p.tech as keyof typeof techColors]
+                                                techColors[p.tech[0] as keyof typeof techColors] ?? "bg-slate-500"
                                             )}
                                         />
                                         <span className="text-xs font-medium text-muted-foreground">
-                                            {p.tech}
+                                            {p.tech.join(" · ")}
                                         </span>
                                     </div>
-                                    <Link
-                                        href={p.link}
-                                        className="flex items-center gap-2 text-sm text-primary hover:underline"
-                                    >
-                                        View Project
-                                        <ExternalLink className="inline-block size-3" />
-                                    </Link>
                                 </div>
                             </div>
                         </CardContent>
